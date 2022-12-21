@@ -9,7 +9,7 @@
 <body>
    <form method="POST" >
     @csrf
-        <a href="">login with google</a>
+        <a href="{{route('googleRedirect')}}">login with google</a>
    </form>
 </body>
 </html>

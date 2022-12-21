@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login_view', [AuthController::class, 'getView']);
+
+Route::get('/auth/google/redirect', [AuthController::class, 'googleRedirect'])->name('googleRedirect');
+
+Route::get('/auth/google/callback', [AuthController::class, 'googleCallback'])->name('googleCallback');
