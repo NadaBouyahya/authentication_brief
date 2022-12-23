@@ -28,8 +28,8 @@
                                 <tr>
                                         <td>{{ $todo->title }}</td>
                                         <td>
-                                            <a href="" class="btn btn-sm btn-outline-success">edit</a>
-                                            <a href="" class="btn btn-sm btn-outline-danger">delete</a>
+                                            <a href="{{route('todo.edit', $todo->id)}}" class="btn btn-sm btn-outline-success">edit</a>
+                                            {{-- <a href="{{route('todo.delete', $todo->id)}}" class="btn btn-sm btn-outline-danger">delete</a> --}}
     
                                         </td>
                                 </tr>

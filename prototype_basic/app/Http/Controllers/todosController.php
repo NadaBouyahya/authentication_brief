@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use Egulias\EmailValidator\Warning\TLD;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -79,7 +80,8 @@ class todosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Todo::where('id', $id)->where('id_user', Auth::user()->id)->first();
+        return view('edit_todo', compact('todo'));
     }
 
     /**
