@@ -18,13 +18,19 @@
                         </div>
                     @endif
 
-                    <table class="tabel table-hover table-borderless">
+                    <table class="table table-hover table-borderless">
                         <thead>
-                            <th scope="col">todo</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Paramateres</th>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>todo title</td>
+                                <td>
+                                    <a href="" class="btn btn-sm btn-outline-success">edit</a>
+                                    <a href="" class="btn btn-sm btn-outline-danger">delete</a>
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
