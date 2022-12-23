@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+// use Illuminate\Auth\AuthManager;
 
 class todosController extends Controller
 {
@@ -16,10 +20,11 @@ class todosController extends Controller
      {
          $this->middleware('auth');
      }
-     
+
     public function index()
     {
-        return view('home');
+        $todos = Todo::where( 'id_user', Auth::user()->id ) -> orderBy('created_at', 'desc')->get();
+        return view('home', compact('todos'));
     }
 
     /**
@@ -40,7 +45,19 @@ class todosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string|max:255'
+
+        ]);
+
+        $todo = new Todo();
+        $todo->title = $request->title;
+
+        $todo->id_user = Auth::user()->id;
+        $todo->save();
+
+        return redirect()->route('home');
+
     }
 
     /**

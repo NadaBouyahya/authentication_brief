@@ -22,6 +22,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [todosController::class, 'index'])->name('home');
 
 Route::resource('/todo', todosController::class);
