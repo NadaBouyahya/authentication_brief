@@ -23,5 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [todosController::class, 'index'])->name('home');
+// Route::get('/delete', [todosController::class, 'destroy'])->name('destroy');
+
 
 Route::resource('/todo', todosController::class);
+

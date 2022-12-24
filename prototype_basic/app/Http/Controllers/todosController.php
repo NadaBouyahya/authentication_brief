@@ -17,14 +17,14 @@ class todosController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
-        $todos = Todo::where( 'id_user', Auth::user()->id ) -> orderBy('created_at', 'desc')->get();
+        $todos = Todo::where('id_user', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         return view('home', compact('todos'));
     }
 
@@ -58,7 +58,6 @@ class todosController extends Controller
         $todo->save();
 
         return redirect()->route('home');
-
     }
 
     /**
@@ -93,7 +92,17 @@ class todosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string|max:255'
+
+        ]);
+
+        $todo = Todo::find($id);
+        $todo->title = $request->title;
+        // $todo->id_user = Auth::user()->id;
+        $todo->save();
+
+        return redirect()->route('home');
     }
 
     /**
@@ -104,6 +113,8 @@ class todosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $todo = Todo::where('id', $id)->where('id_user', Auth::user()->id)->first();
+        $todo->destroy();
+        return redirect()->route('todo.index');
     }
 }
