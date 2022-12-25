@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\auth_Controller;
 use App\Http\Controllers\todosController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('login');
 });
+
+Route::get('/auth/google/redirect', [auth_Controller::class, 'googleRedirect'])->name('googleRedirect');
+
+Route::get('/auth/google/callback', [auth_Controller::class, 'googleCallback'])->name('googleCallback');
 
 Auth::routes();
 
