@@ -22,6 +22,9 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+Route::get('/auth/google/redirect', [auth_Controller::class, 'googleRedirect'])->name('googleRedirect');
+
+Route::get('/auth/google/callback', [auth_Controller::class, 'googleCallback'])->name('googleCallback');
 
 Auth::routes();
 

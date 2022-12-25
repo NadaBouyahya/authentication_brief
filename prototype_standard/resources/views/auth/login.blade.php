@@ -62,6 +62,9 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <a href="{{route('googleRedirect')}}" style="background-color: antiquewhite; color:black" >login with google</a>
+
                             </div>
                         </div>
                     </form>
