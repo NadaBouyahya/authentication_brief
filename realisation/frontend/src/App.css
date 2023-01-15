@@ -1,0 +1,53 @@
+.App{
+ display: flex;
+ flex-direction: column;
+}
+
+body{
+  margin: 0;
+  background-color: #F8F8F8;
+}
+
+.menuANDpages{
+  display: flex;
+  
+}
+
+.topbar_img{
+  margin-left: 36px;
+}
+
+.topbar_content{
+  background-color: white;
+  padding: 20px;
+}
+
+.menu_content {
+  background-color: white;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.menu_items{
+  margin-top: 80px;
+  list-style: none;
+}
+
+.menu_items li {
+  font-size: 25px;
+  margin:10px 0  ;
+}
+
+.item_link {
+  text-decoration: none;
+  color: #2B3641;
+}
+
+.item_link span {
+  margin-right: 20px;
+}
+
