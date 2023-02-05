@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BriefController;
+use App\Http\Controllers\TutorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+// brief
+Route::get('/briefs', [BriefController::class, 'show_brief']);
+Route::get('/briefs/{id}', [BriefController::class, 'show_brief_byId']);
+
+//tutor
+Route::get('/tutors', [TutorController::class, 'show_tutors']);
+Route::get('/tutors/{id}', [TutorController::class, 'show_tutor_byId']);
