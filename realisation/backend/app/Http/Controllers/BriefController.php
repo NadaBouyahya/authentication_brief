@@ -20,14 +20,15 @@ class BriefController extends Controller
         return response()->json($brief);
     }
 
-    // public function insert_brief(Request $req){
-    //     $brief = new Brief();
-    //     $brief->name = $req->name;
-    //     $brief->description = $req->description;
-    //     $brief->duration = $req->duration;
-    //     // $brief-> = $req->livraison_date;
+    public function insert_brief(Request $req){
+        $brief = new Brief();
+        $brief->name = $req->name;
+        $brief->description = $req->description;
+        $brief->duration = $req->duration;
+        $brief->tutor_id = $req->tutor;
+        // $brief-> = $req->livraison_date;
 
-    //     $brief->save();
+        $brief->save();
     //     return $brief;
-    // }
+    }
 }

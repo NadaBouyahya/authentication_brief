@@ -16,4 +16,5 @@ class TutorController extends Controller
         $tutor = Tutor::where('id', $id)->first();
         return response()->json($tutor);
     }
+
 }
