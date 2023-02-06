@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from './components/Sidebar';
 import { SidebarData } from './components/SidebarData';
 import Topbar from './components/Topbar';
-import AddBrief from './components/pages/AddBrief';
+import AddBrief from './components/pages/forms/AddBrief';
 
 function App() {
   return (

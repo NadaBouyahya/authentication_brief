@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.menu_items li{
+  font-size: 20px;
+}
+
+.conatiner{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.briefs_mainDiv{
+  padding: 50px 0 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 30px; */
+justify-content: space-between;
+}
+
+.brief_info_container{
+  /* margin-left: 30px; */
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+  padding: 20px;
+  margin-top: 30px;
+  /* height: 200px; */
+}
+
+.brief_add_link{
+  margin-left: 30px;
+
+}
+
+.brief_add_link a{
+  text-decoration: none;
+  color: white;
+  background-color: rgb(16, 26, 27);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.brief_parametres{
+  display: flex;
+  margin-top: 20px;
+  /* background-color: blueviolet; */
+  justify-content: space-between;
+}
+
+.brief_parametres a {
+  color: white;
+  background-color: black;
+  padding: 5px 10px 5px;
+  border-radius: 5px;
+
+}
+
+/* add brief style */
+.add_brief_form_container{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100%;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 50px 100px 40px;
+  margin-top: 40px;
+  align-items:center;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+form input {
+  margin-top: 30px;
+  height: 30px;
+  width: 400px;
+  outline: none;
+  border-width: thin;
+  border-radius: 5px;
+}
+
+form select {
+  margin-top: 30px;
+  height: 35px;
+  width: 408px;
+  outline: none;
+  border-width: thin;
+  border-radius: 5px;
+
+}
+
+.submit{
+  height: 35px;
+  width: 130px;
+}
